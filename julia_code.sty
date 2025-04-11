@@ -1,0 +1,84 @@
+% julia_code.sty - Pacchetto personale per codice Julia con listings
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{julia_code}[2025/04/11 v1.1 Codice Julia con listings e sfondo grigio]
+
+\RequirePackage{xcolor}
+\RequirePackage{listings}
+\RequirePackage{amsmath}
+
+% Definizione dei colori personalizzati
+\definecolor{Gray}{gray}{0.5}
+\definecolor{Blue}{rgb}{0.0,0.0,1.0}
+\definecolor{OliveGreen}{rgb}{0.33,0.42,0.18}
+\definecolor{Maroon}{rgb}{0.5,0.0,0.0}
+\definecolor{lightgray}{gray}{0.95}
+
+% Definizione della lingua Julia
+\lstdefinelanguage{julia}{
+	morekeywords={
+		function, return, if, else, elseif, while, for, in, begin, end,
+		let, local, global, const, do, struct, mutable, module, import, export, using,
+		abstract, type, where, try, catch, finally, break, continue,
+		macro, quote, true, false, nothing, typeof, new, isa,
+		Int, Int8, Int16, Int32, Int64, UInt, UInt8, UInt16, UInt32, UInt64,
+		Float16, Float32, Float64, Complex, Bool, Char, String, Array, Dict, Tuple,
+		println, print, read, write, open, close, push!, pop!, size, length, rand,
+		Threads, @threads, @inbounds, @views, @time, @elapsed, @simd, @show, @assert
+	},
+	sensitive=true,
+	morecomment=[l]{\#},
+	morestring=[b]"
+}
+
+% Stile listings personalizzato per Julia
+\lstdefinestyle{juliaCustom}{
+	language=julia,
+	basicstyle={\ttfamily\small\color{black}},
+	columns=fullflexible,
+	numbers=left,
+	numberstyle=\small\ttfamily\color{Gray},
+	stepnumber=1,
+	numbersep=10pt,
+	numberfirstline=true,
+	numberblanklines=true,
+	tabsize=4,
+	keepspaces=true,
+	showstringspaces=false,
+	showtabs=false,
+	lineskip=-1.5pt,
+	extendedchars=true,
+	breaklines=true,
+	breakatwhitespace=false,
+	keywordstyle=\color{Blue}\bfseries,
+	identifierstyle=,
+	commentstyle=\sffamily\color{OliveGreen},
+	stringstyle=\color{Maroon},
+	frame=single,
+	framerule=0.5pt,
+	backgroundcolor=\color{lightgray},
+	xleftmargin=0.05\textwidth,
+	xrightmargin=0.05\textwidth,
+	literate=
+	{à}{{\`a}}1 {è}{{\`e}}1 {é}{{\'e}}1 {ù}{{\`u}}1 {ò}{{\`o}}1 {ì}{{\`i}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+	{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+	{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+	{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+	{ñ}{{\~n}}1 {Ñ}{{\~N}}1 {÷}{{$\div$}}1
+	{ç}{{\c{c}}}1 {Ç}{{\c{C}}}1
+	{α}{{$\alpha$}}1 {β}{{$\beta$}}1 {γ}{{$\gamma$}}1 {δ}{{$\delta$}}1 {ε}{{$\epsilon$}}1 
+	{ζ}{{$\zeta$}}1 {η}{{$\eta$}}1 {θ}{{$\theta$}}1 {ι}{{$\iota$}}1 {κ}{{$\kappa$}}1 
+	{λ}{{$\lambda$}}1 {μ}{{$\mu$}}1 {ν}{{$\nu$}}1 {ξ}{{$\xi$}}1 {ο}{{$\omicron$}}1 
+	{π}{{$\pi$}}1 {ρ}{{$\rho$}}1 {σ}{{$\sigma$}}1 {τ}{{$\tau$}}1 {υ}{{$\upsilon$}}1 
+	{φ}{{$\phi$}}1 {χ}{{$\chi$}}1 {ψ}{{$\psi$}}1 {ω}{{$\omega$}}1 
+	{Α}{{$\Alpha$}}1 {Β}{{$\Beta$}}1 {Γ}{{$\Gamma$}}1 {Δ}{{$\Delta$}}1 {Ε}{{$\Epsilon$}}1 
+	{Ζ}{{$\Zeta$}}1 {Η}{{$\Eta$}}1 {Θ}{{$\Theta$}}1 {Ι}{{$\Iota$}}1 {Κ}{{$\Kappa$}}1 
+	{Λ}{{$\Lambda$}}1 {Μ}{{$\Mu$}}1 {Ν}{{$\Nu$}}1 {Ξ}{{$\Xi$}}1 {Ο}{{$\Omicron$}}1 
+	{Π}{{$\Pi$}}1 {Ρ}{{$\Rho$}}1 {Σ}{{$\Sigma$}}1 {Τ}{{$\Tau$}}1 {Υ}{{$\Upsilon$}}1 
+	{Φ}{{$\Phi$}}1 {Χ}{{$\Chi$}}1 {Ψ}{{$\Psi$}}1 {Ω}{{$\Omega$}}1
+	{_}{{\_}}1 {*}{\textasteriskcentered}1,
+	texcl=false,
+}
+
+\endinput
