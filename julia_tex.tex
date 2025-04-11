@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{julia_code}  % Il nostro pacchetto personalizzato
+\usepackage{geometry}         %bordi
+\geometry{a4paper,top=1cm,bottom=1.5cm,left=2cm,right=2cm,heightrounded}
+\setlength\parindent{0pt}
+
+\begin{document}
+	
+	\section*{Esempio di codice Julia}
+	\begin{lstlisting}[style=juliaCustom]
+		function somma(x, y)
+		println("Risultato: ", x + y)  # Somma due numeri
+		return x + y
+		end
+		
+		β = 0.5 + 0.1 * rand()
+		println("β = ", β)
+	\end{lstlisting}
+	
+	
+	\lstinputlisting[style=juliaCustom]{../final/wup_block_super_fast.jl}
+	
+\end{document}
+
+
