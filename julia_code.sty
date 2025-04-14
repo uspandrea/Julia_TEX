@@ -1,6 +1,6 @@
-% julia_code.sty - Pacchetto personale per codice Julia con listings
+% julia_code.sty - Personal package for  Julia code on listings
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{julia_code}[2025/04/11 v1.1 Codice Julia con listings e sfondo grigio]
+\ProvidesPackage{julia_code}[2025/04/11 v1.1 Code Julia w listings and grey background]
 
 \RequirePackage{xcolor}
 \RequirePackage{listings}
@@ -10,7 +10,8 @@
 \definecolor{Gray}{gray}{0.5}
 \definecolor{Blue}{rgb}{0.0,0.0,1.0}
 \definecolor{OliveGreen}{rgb}{0.33,0.42,0.18}
-\definecolor{Maroon}{rgb}{0.5,0.0,0.0}
+\definecolor{BrightGreen}{rgb}{0.0, 0.8, 0.2}
+\definecolor{BrightRed}{rgb}{1.0,0.0,0.0}
 \definecolor{lightgray}{gray}{0.95}
 
 % Definizione della lingua Julia
@@ -51,8 +52,8 @@
 	breakatwhitespace=false,
 	keywordstyle=\color{Blue}\bfseries,
 	identifierstyle=,
-	commentstyle=\sffamily\color{OliveGreen},
-	stringstyle=\color{Maroon},
+	commentstyle=\sffamily\color{BrightGreen},
+	stringstyle=\color{BrightRed},
 	frame=single,
 	framerule=0.5pt,
 	backgroundcolor=\color{lightgray},
@@ -79,6 +80,6 @@
 	{Φ}{{$\Phi$}}1 {Χ}{{$\Chi$}}1 {Ψ}{{$\Psi$}}1 {Ω}{{$\Omega$}}1
 	{_}{{\_}}1 {*}{\textasteriskcentered}1,
 	texcl=false,
-}
+}  
 
 \endinput
